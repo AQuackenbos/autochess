@@ -1,0 +1,33 @@
+{
+  "name": "autochess",
+  "version": "1.0.0",
+  "description": "The Non-Dota Player's Guide to Autochess",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aquackenbos/autochess.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aquackenbos/autochess/issues"
+  },
+  "homepage": "https://github.com/Aquackenbos/autochess#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "vue": "^2.6.7",
+    "vue-cli": "^2.9.6",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.7"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.2.3"
+  }
+}
