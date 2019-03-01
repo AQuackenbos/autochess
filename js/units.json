@@ -1,0 +1,22 @@
+[{
+	"name": "Juggernaut",
+	"cost": 2,
+	"nickname": "jugg",
+	"class": "warrior",
+	"race": "orc",
+	"stats": {
+		"armor": 5,
+		"resist": 0,
+		"health": [600, 1200, 2400],
+		"damage": [[65,70],[130,140],[260,280]],
+		"speed": 1.1
+	},
+	"ability": {
+		"name": "Blade Fury",
+		"description": "Deals damage per second to adjacent units for 5 seconds. <br />&#9733; 50 Damage/second <br />&#9733;&#9733; 100 Damage/second <br />&#9733;&#9733;&#9733; 150 Damage/second",
+		"damage_type": "Magical",
+		"cooldown": [12],
+		"damage": [50,100,150],
+		"damage_desc": "Damage (per second)"
+	}
+}]

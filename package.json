@@ -17,15 +17,18 @@
   },
   "homepage": "https://github.com/Aquackenbos/autochess#readme",
   "dependencies": {
+    "@babel/core": "^7.3.4",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.5",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "tippy.js": "^4.0.3",
     "vue": "^2.6.7",
     "vue-cli": "^2.9.6",
     "vue-loader": "^15.7.0",
-    "vue-template-compiler": "^2.6.7"
+    "vue-template-compiler": "^2.6.7",
+    "webpack": "^4.29.6"
   },
   "devDependencies": {
     "webpack-cli": "^3.2.3"
