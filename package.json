@@ -23,10 +23,12 @@
     "babel-loader": "^8.0.5",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "css-loader": "^2.1.0",
     "tippy.js": "^4.0.3",
     "vue": "^2.6.7",
     "vue-cli": "^2.9.6",
     "vue-loader": "^15.7.0",
+    "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.7",
     "webpack": "^4.29.6"
   },

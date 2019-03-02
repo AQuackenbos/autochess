@@ -1,22 +1,626 @@
 [{
-	"name": "Juggernaut",
-	"cost": 2,
-	"nickname": "jugg",
+	"name": "Axe",
+	"cost": 1,
+	"nickname": [],
 	"class": "warrior",
 	"race": "orc",
 	"stats": {
-		"armor": 5,
-		"resist": 0,
+		"armor": [5],
+		"resist": [0],
+		"health": [700,1400,2800],
+		"damage": [[50,55],[100,110],[200,220]],
+		"speed": 1.5,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Berserker's Call",
+		"description": "Taunts adjacent enemies and forces them to ONLY attack him for X seconds.  Gains bonus armor for the duration.",
+		"desc_levels": [
+			"2 seconds, 5 bonus armor",
+			"3 seconds, 10 bonus armor",
+			"4 seconds, 15 bonus armor"
+		],
+		"passive": false,
+		"cooldown": [10]
+	}
+},{
+	"name": "Enchantress",
+	"cost": 1,
+	"nickname": ["Ench","Bambi"],
+	"class": "druid",
+	"race": "beast",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [400,800,1500],
+		"damage": [[50,60],[100,120],[200,240]],
+		"speed": 1.5,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Nature's Attendants",
+		"description": "Forms a cloud of healing that distributes to injured allies in a Medium area around her.  Persists after death.  Lasts 11 seconds.",
+		"desc_levels": [
+			"75 health/second total healing",
+			"125 health/second total healing",
+			"175 health/second total healing"
+		],
+		"passive": false,
+		"cooldown": [15]
+	}
+},{
+	"name": "Clockwerk",
+	"cost": 1,
+	"nickname": ["Clock"],
+	"class": "mech",
+	"race": "goblin",
+	"stats": {
+		"armor": [5,7,9],
+		"resist": [0],
+		"health": [700,1400,2800],
+		"damage": [[45,55],[90,110],[180,220]],
+		"speed": 1.4,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Battery Assault",
+		"description": "Mini-stuns and deals <strong>Magic</strong> damage to a random adjacent enemy every 0.7 seconds for 5 seconds (7 hits).",
+		"desc_levels": [
+			"50 damage per hit",
+			"75 damage per hit",
+			"100 damage per hit"
+		],
+		"passive": false,
+		"cooldown": [12,10,8]
+	}
+},{
+	"name": "Ogre Magi",
+	"cost": 1,
+	"nickname": ["Ogre"],
+	"class": "mage",
+	"race": "ogre",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [700,1400,2800],
+		"damage": [[55,65],[110,130],[220,260]],
+		"speed": 1.4,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Bloodlust",
+		"description": "Buffs an ally with increased attack speed.  Extra strong if used on himself.  Lasts 30 seconds.",
+		"desc_levels": [
+			"+30 attack speed, +30 additional self bonus",
+			"+40 attack speed, +50 additional self bonus",
+			"+50 attack speed, +70 additional self bonus"
+		],
+		"passive": false,
+		"cooldown": [5]
+	}
+},{
+	"name": "Drow Ranger",
+	"cost": 1,
+	"nickname": ["Drow"],
+	"class": "hunter",
+	"race": "undead",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [400,800,1600],
+		"damage": [[45,50],[90,100],[180,200]],
+		"speed": 1.3,
+		"range": "High"
+	},
+	"ability": {
+		"name": "Marksmanship",
+		"description": "Increases Drow Ranger's attack damage and speed by a percent.",
+		"desc_levels": [
+			"+20% damage and attack speed",
+			"+30% damage and attack speed",
+			"+40% damage and attack speed"
+		],
+		"passive": true,
+		"cooldown": [0]
+	}
+},{
+	"name": "Bounty Hunter",
+	"cost": 1,
+	"nickname": ["BH","Bounty"],
+	"class": "assassin",
+	"race": "goblin",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [550,1100,2200],
+		"damage": [[50,75],[100,140],[200,280]],
+		"speed": 1.0,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Shuriken Toss",
+		"description": "Hits a single target for a large amount of <strong>Magic</strong> damage",
+		"desc_levels": [
+			"300 damage",
+			"500 damage",
+			"700 damage"
+		],
+		"passive": false,
+		"cooldown": [5]
+	}
+},{
+	"name": "Tusk",
+	"cost": 1,
+	"nickname": ["Tuskar"],
+	"class": "warrior",
+	"race": "beast",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [650,1300,2600],
+		"damage": [[50,55],[100,110],[200,220]],
+		"speed": 1.2,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Walrus PUNCH",
+		"description": "Instantly hits Tusk's target with a critical attack and stuns them for 1 second.",
+		"desc_levels": [
+			"3.0x attack damage hit",
+			"3.5x attack damage hit",
+			"4.0x attack damage hit"
+		],
+		"passive": false,
+		"cooldown": [7]
+	}
+},{
+	"name": "Shadow Shaman",
+	"cost": 1,
+	"nickname": ["SS","Shaman"],
+	"class": "shaman",
+	"race": "troll",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [550,1100,2200],
+		"damage": [[40,50],[80,100],[160,200]],
+		"speed": 1.6,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Hex",
+		"description": "Turns a single enemy into a harmless chicken.",
+		"desc_levels": [
+			"Lasts 4 seconds",
+			"Lasts 6 seconds",
+			"Lasts 8 seconds"
+		],
+		"passive": false,
+		"cooldown": [10]
+	}
+},{
+	"name": "Bat Rider",
+	"cost": 1,
+	"nickname": ["Bat"],
+	"class": "knight",
+	"race": "troll",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [500,1000,2000],
+		"damage": [[40,55],[80,110],[160,220]],
+		"speed": 1.3,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Sticky Napalm",
+		"description": "Makes Bat Rider deal extra <strong>Magic</strong> damage to targets in an Medium area, and slows their ability to change targets.  Stacks with itself.  Lasts 20 seconds.",
+		"desc_levels": [
+			"50 bonus damage",
+			"75 bonus damage",
+			"100 bonus damage"
+		],
+		"passive": false,
+		"cooldown": [3]
+	}
+},{
+	"name": "Tinker",
+	"cost": 1,
+	"nickname": [],
+	"class": "mech",
+	"race": "goblin",
+	"stats": {
+		"armor": [10],
+		"resist": [0],
+		"health": [500,1000,2000],
+		"damage": [[40,50],[80,100],[160,200]],
+		"speed": 1.5,
+		"range": "High"
+	},
+	"ability": {
+		"name": "Heat Seeking Missile",
+		"description": "Fires 3 missiles at random single enemies, dealing <strong>Magic</strong> damage.",
+		"desc_levels": [
+			"250 damage per missile",
+			"350 damage per missile",
+			"450 damage per missile"
+		],
+		"passive": false,
+		"cooldown": [8,6,4]
+	}
+},{
+	"name": "Anti-Mage",
+	"cost": 1,
+	"nickname": ["AM"],
+	"class": "demon_hunter",
+	"race": "elf",
+	"stats": {
+		"armor": [5],
+		"resist": [10,20,30],
+		"health": [500,1000,2000],
+		"damage": [[45,55],[90,110],[180,220]],
+		"speed": 1.2,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Mana Break",
+		"description": "Removes mana from Anti-Mage's target every time he attacks.  Deals 50% of the mana burned as <strong>Physical</strong> damage.",
+		"desc_levels": [
+			"30 mana burned per hit",
+			"60 mana burned per hit",
+			"90 mana burned per hit"
+		],
+		"passive": true,
+		"cooldown": [0]
+	}
+},{
+	"name": "Tiny",
+	"cost": 1,
+	"nickname": [],
+	"class": "warrior",
+	"race": "elemental",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [650,1300,2600],
+		"damage": [[60,100],[120,200],[240,400]],
+		"speed": 1.9,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Toss",
+		"description": "Throws an enemy to the furthest corner from Tiny, dealing <strong>Physical</strong> damage in a Small area where they land and stunning them.",
+		"desc_levels": [
+			"100 damage, 1.5 second stun",
+			"200 damage, 2.0 second stun",
+			"300 damage, 2.5 second stun"
+		],
+		"passive": false,
+		"cooldown": [10,8,6]
+	}
+},{
+	"name": "Crystal Maiden",
+	"cost": 2,
+	"nickname": ["CM"],
+	"class": "mage",
+	"race": "human",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [450,900,1800],
+		"damage": [[40,45],[80,90],[160,180]],
+		"speed": 1.7,
+		"range": "High"
+	},
+	"ability": {
+		"name": "Arcane Aura",
+		"description": "Automatically generates mana for allies in a High range of Crystal Maiden every 2 seconds.",
+		"desc_levels": [
+			"8 mana generated",
+			"14 mana generated",
+			"20 mana generated"
+		],
+		"passive": true,
+		"cooldown": [0]
+	}
+},{
+	"name": "Beastmaster",
+	"cost": 2,
+	"nickname": ["BM"],
+	"class": "hunter",
+	"race": "orc",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [600,1200,2400],
+		"damage": [[60,70],[120,140],[240,280]],
+		"speed": 1.3,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Wild Axes",
+		"description": "Throws 2 axes that each deal <strong>Physical</strong> damage to every enemy hit, and make Beastmaster deal extra damage to them.",
+		"desc_levels": [
+			"60 damage per axe, +10% damage taken per axe",
+			"100 damage per axe, +20% damage taken per axe",
+			"140 damage per axe, +30% damage taken per axe"
+		],
+		"passive": false,
+		"cooldown": [7]
+	}
+},{
+	"name": "Juggernaut",
+	"cost": 2,
+	"nickname": ["Jugg"],
+	"class": "warrior",
+	"race": "orc",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
 		"health": [600, 1200, 2400],
 		"damage": [[65,70],[130,140],[260,280]],
-		"speed": 1.1
+		"speed": 1.1,
+		"range": "Melee"
 	},
 	"ability": {
 		"name": "Blade Fury",
-		"description": "Deals damage per second to adjacent units for 5 seconds. <br />&#9733; 50 Damage/second <br />&#9733;&#9733; 100 Damage/second <br />&#9733;&#9733;&#9733; 150 Damage/second",
-		"damage_type": "Magical",
-		"cooldown": [12],
-		"damage": [50,100,150],
-		"damage_desc": "Damage (per second)"
+		"description": "Deals <strong>Magic</strong> damage per second to adjacent enemies for 5 seconds.",
+		"desc_levels": [
+			"50 Damage/second",
+			"100 Damage/second",
+			"150 Damage/second"
+		],
+		"passive": false,
+		"cooldown": [12]
+	}
+},{
+	"name": "Timbersaw",
+	"cost": 2,
+	"nickname": ["Timber"],
+	"class": "mech",
+	"race": "goblin",
+	"stats": {
+		"armor": [6,8,10],
+		"resist": [0],
+		"health": [800,1600,3200],
+		"damage": [[55,60],[110,120],[220,240]],
+		"speed": 1.4,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Whirling Death",
+		"description": "Deals <strong>Pure</strong> damage to every adjacent enemy.",
+		"desc_levels": [
+			"150 damage",
+			"200 damage",
+			"250 damage"
+		],
+		"passive": false,
+		"cooldown": [6,5,4]
+	}
+},{
+	"name": "Queen of Pain",
+	"cost": 2,
+	"nickname": ["Queen","QoP","kwop"],
+	"class": "assassin",
+	"race": "demon",
+	"stats": {
+		"armor": [0],
+		"resist": [0],
+		"health": [550,1100,2200],
+		"damage": [[55,60],[110,120],[220,240]],
+		"speed": 1.2,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Scream of Pain",
+		"description": "Deals <strong>Magic</strong> damage to all enemies in a Medium area around Queen of Pain.",
+		"desc_levels": [
+			"200 damage",
+			"300 damage",
+			"400 damage"
+		],
+		"passive": false,
+		"cooldown": [6]
+	}
+},{
+	"name": "Puck",
+	"cost": 2,
+	"nickname": [],
+	"class": "mage",
+	"race": ["elf","dragon"],
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [450,900,1800],
+		"damage": [[40,50],[80,100],[160,200]],
+		"speed": 1.7,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Illusory Orb",
+		"description": "Fires an orb forward a Very High distance, dealing <strong>Magic</strong> damage to every enemy hit.",
+		"desc_levels": [
+			"150 damage",
+			"200 damage",
+			"250 damage"
+		],
+		"passive": false,
+		"cooldown": [5,4,3]
+	}
+},{
+	"name": "Witch Doctor",
+	"cost": 2,
+	"nickname": ["WD"],
+	"class": "warlock",
+	"race": "troll",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [550,1100,2200],
+		"damage": [[40,50],[80,100],[160,200]],
+		"speed": 1.4,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Paralyzing Cask",
+		"description": "Throws a bouncing stun between individual enemies, stunning and dealing <strong>Magic</strong> damage every time it hits.",
+		"desc_levels": [
+			"2 bounces, 50 damage per hit",
+			"4 bounces, 75 damage per hit",
+			"6 bounces, 100 damage per hit"
+		],
+		"passive": false,
+		"cooldown": [10]
+	}
+},{
+	"name": "Slardar",
+	"cost": 2,
+	"nickname": ["Fishman"],
+	"class": "warrior",
+	"race": "naga",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [650,1300,2600],
+		"damage": [[70,100],[140,200],[280,400]],
+		"speed": 1.2,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Corrosive Haze",
+		"description": "Drastically lowers the armor of a single enemy; reveals invisibility (currently irrelevant to Auto Chess). Lasts 20 seconds.",
+		"desc_levels": [
+			"-15 armor",
+			"-30 armor",
+			"-45 armor"
+		],
+		"passive": false,
+		"cooldown": [3]
+	}
+},{
+	"name": "Chaos Knight",
+	"cost": 2,
+	"nickname": ["CK"],
+	"class": "knight",
+	"race": "demon",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [750,1500,3000],
+		"damage": [[40,110],[80,220],[160,440]],
+		"speed": 1.3,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Chaos Bolt",
+		"description": "Deals a random amount of <strong>Magic</strong> damage and stuns a single enemy for a random duration.",
+		"desc_levels": [
+			"50-200 damage, 1-2 second stun",
+			"100-300 damage, 1-3 second stun",
+			"150-400 damage, 1-4 second stun"
+		],
+		"passive": false,
+		"cooldown": [5]
+	}
+},{
+	"name": "Treant Protector",
+	"cost": 2,
+	"nickname": ["Tree"],
+	"class": "druid",
+	"race": "elf",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [650,1300,2300],
+		"damage": [[60,90],[120,180],[240,360]],
+		"speed": 2,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Leech Seed",
+		"description": "Deals <strong>Magic</strong> damage every 0.7 seconds to an enemy, healing allies in a Medium area around them for the same amount each tick.  Lasts 5 seconds (7 ticks).",
+		"desc_levels": [
+			"30 damage/heal per tick (210 damage total)",
+			"45 damage/heal per tick (315 damage total)",
+			"60 damage/heal per tick (420 damage total)"
+		],
+		"passive": false,
+		"cooldown": [7]
+	}
+},{
+	"name": "Morphling",
+	"cost": 2,
+	"nickname": ["Morph"],
+	"class": "assassin",
+	"race": "elemental",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [500,1000,2000],
+		"damage": [[45,60],[90,120],[180,240]],
+		"speed": 1.3,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Waveform",
+		"description": "Morphling becomes temporarily invulnerable and jumps across the board, dealing <strong>Magic</strong> damage to every enemy he moves through.",
+		"desc_levels": [
+			"150 damage",
+			"250 damage",
+			"350 damage"
+		],
+		"passive": false,
+		"cooldown": [10,8,6]
+	}
+},{
+	"name": "Luna",
+	"cost": 2,
+	"nickname": [],
+	"class": "knight",
+	"race": "elf",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [500,1000,2000],
+		"damage": [[50,60],[100,120],[200,240]],
+		"speed": 1.3,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Moon Glaive",
+		"description": "Luna's attacks bounce to additional enemies in a Medium range, dealing 30% less damage each bounce.",
+		"desc_levels": [
+			"3 bounces",
+			"5 bounces",
+			"7 bounces"
+		],
+		"passive": true,
+		"cooldown": [0]
+	}
+},{
+	"name": "Furion",
+	"cost": 2,
+	"nickname": ["Prophet","Nature's Prophet"],
+	"class": "druid",
+	"race": "elf",
+	"stats": {
+		"armor": [0],
+		"resist": [0],
+		"health": [500,1000,1900],
+		"damage": [[45,50],[90,100],[180,200]],
+		"speed": 1.4,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Nature's Call",
+		"description": "Summons an ally Treant to an edge of the board.",
+		"desc_levels": [
+			"(treant stats)",
+			"..",
+			".."
+		],
+		"passive": false,
+		"cooldown": [7]
 	}
 }]

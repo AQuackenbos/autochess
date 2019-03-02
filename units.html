@@ -5,24 +5,82 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/bulmaswatch/darkly/bulmaswatch.min.css">
 		<style>
+		/*
 			@font-face { font-family: 'BebasNeue', src: url('BebasNeue-Regular.ttf') format('truetype'), url('BebasNeue-Regular.woff') format('woff'); }
 			html, body, #app, #app > div { margin: 0 auto; background: #000 ; color: #FFF; text-align: center; font-family: 'BebasNeue',sans-serif }
 			a, a:visited, a:hover { color: #a3a5fb; text-decoration: none; font-weight: bold }
+			.class, .race { text-transform: capitalize }
+			#app .autochess-unit:nth-child(odd) { background: #222 }
+			.autochess-unit strong { color: #DDD }
+		*/
+			.race-class { text-transform: capitalize }
+			.autochess-unit {
+				border-bottom: 1px solid white;
+			}
+			.autochess-unit.cost-1 {
+				background: #323a3a
+			}
+			
+			.autochess-unit.cost-2 {
+				background: #32576d
+			}
+			
+			.autochess-unit.cost-3 {
+				background: #3a3da5
+			}
+			
+			.autochess-unit.cost-4 {
+				background: #733d9c
+			}
+			
+			.autochess-unit,cost-5 {
+				background: #90762f
+			}
+			
+			.table {
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.table th, .table td, .column {
+				text-align: center;
+			}
+			
+			.table td.is-vcentered {
+				vertical-align: middle;
+			}
+			
+			#app .autochess-unit hr {
+				background: #EEE;
+				margin: 2px 0;
+			}
+			
+			.big-name {
+				font-size: 1.5em;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="app" class="container">
-			<div class="columns is-multiline">
+			<div class="notification">
 				<div class="column is-12">
 					<h3>Last Updated: 2019/02/28</h3>
 					<a href="index.html">Back to Basic Rules</a>
+				</div>
+			</div>
+			<div class="columns is-multiline is-centered">
+				<div class="column is-12">
+					<h1 class="is-title is-1">Auto Chess Units</h1>
 				</div>
 				<div class="column is-12">
 					((controls))
 				</div>
 			</div>
-			<autochess-unit v-for="unit in units" v-bind:unit="unit" v-bind:key="unit.name"></auto-chess>
+			<section class="section">
+				<autochess-unit v-for="unit in units" v-bind:unit="unit" v-bind:key="unit.name"></auto-chess>
+			</section>
 		</div>
 		<script type="text/javascript" src="js/app.js"></script>
 	</body>
