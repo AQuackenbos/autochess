@@ -166,9 +166,9 @@
 		"name": "Walrus PUNCH",
 		"description": "Instantly hits Tusk's target with a critical attack and stuns them for 1 second.",
 		"desc_levels": [
-			"3.0x attack damage hit",
-			"3.5x attack damage hit",
-			"4.0x attack damage hit"
+			"3.0x attack damage critical",
+			"3.5x attack damage critical",
+			"4.0x attack damage critical"
 		],
 		"passive": false,
 		"cooldown": [7]
@@ -622,5 +622,180 @@
 		],
 		"passive": false,
 		"cooldown": [7]
+	}
+},{
+	"name": "Slark",
+	"cost": 2,
+	"nickname": [],
+	"class": "assassin",
+	"race": "naga",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [500,1000,2000],
+		"damage": [[50,60],[100,120],[200,240]],
+		"speed": 1,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Pounce",
+		"description": "[!!] Recently updated.  Need more info.",
+		"desc_levels": [
+			"",
+			"",
+			""
+		],
+		"passive": false,
+		"cooldown": [0]
+	}
+},{
+	"name": "Lycan",
+	"cost": 3,
+	"nickname": [],
+	"class": "warrior",
+	"race": ["human","beast"],
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [750,1500,3000],
+		"damage": [[50,60],[100,120],[200,240]],
+		"speed": 1.1,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Transform",
+		"description": "Transforms, gaining Max HP, and summons 2 wolves in close squares.",
+		"desc_levels": [
+			"+20% max hp, (wolf stats)",
+			"+30% max hp",
+			"+40% max hp"
+		],
+		"passive": false,
+		"cooldown": [60]
+	}
+},{
+	"name": "Venomancer",
+	"cost": 3,
+	"nickname": ["Veno"],
+	"class": "warlock",
+	"race": "beast",
+	"stats": {
+		"armor": [0],
+		"resist": [20],
+		"health": [500,1000,2000],
+		"damage": [[50,60],[100,120],[200,240]],
+		"speed": 1.2,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Plague Ward",
+		"description": "Summons a plague ward with High attack range that cannot move.  The ward's attacks slow the enemy Attack Rate by 0.3.",
+		"desc_levels": [
+			"ward stats.",
+			"",
+			""
+		],
+		"passive": false,
+		"cooldown": [5]
+	}
+},{
+	"name": "Omniknight",
+	"cost": 3,
+	"nickname": ["Omni"],
+	"class": "knight",
+	"race": "human",
+	"stats": {
+		"armor": [10],
+		"resist": [0],
+		"health": [700,1400,2800],
+		"damage": [[50,60],[100,120],[200,240]],
+		"speed": 1.4,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Purification",
+		"description": "Heals an ally, dealing damage to enemies adjacent to them",
+		"desc_levels": [
+			"200 heal/damage",
+			"300 heal/damage",
+			"400 heal/damage"
+		],
+		"passive": false,
+		"cooldown": [10]
+	}
+},{
+	"name": "Razor",
+	"cost": 3,
+	"nickname": [],
+	"class": "mage",
+	"race": "elemental",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [750,1500,3000],
+		"damage": [[50,60],[100,120],[200,240]],
+		"speed": 1.1,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Plasma Field",
+		"description": "Forms a ring of damage that expands outwards to a (Medium/High) max range, damaging every enemy it crosses over in both directions (hits twice).  Damage increases as targets get further away from Razor.",
+		"desc_levels": [
+			"100 max damage per hit",
+			"175 max damage per hit",
+			"250 max damage per hit"
+		],
+		"passive": false,
+		"cooldown": [10]
+	}
+},{
+	"name": "Windranger",
+	"cost": 3,
+	"nickname": ["Windrunner"],
+	"class": "hunter",
+	"race": "elf",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [550,1100,2200],
+		"damage": [[60,65],[120,130],[240,260]],
+		"speed": 0.9,
+		"range": "High"
+	},
+	"ability": {
+		"name": "Powershot",
+		"description": "Channels for 1 second before firing a line of damage forward, hitting each enemy it crosses.  Each enemy hit reduces the damage to the next enemy by 20%.  Releases when killed even if channel is not complete.  Damage reduces based on incomplete channel.",
+		"desc_levels": [
+			"400 max damage",
+			"600 max damage",
+			"800 max damage"
+		],
+		"passive": false,
+		"cooldown": [10]
+	}
+},{
+	"name": "Phantom Assassin",
+	"cost": 3,
+	"nickname": ["PA"],
+	"class": "assassin",
+	"race": "elf",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [550,1100,2200],
+		"damage": [[70,90],[140,180],[280,360]],
+		"speed": 1.2,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Coup de Grace",
+		"description": "Phantom Assassin has a 10% chance to deal a strong critical when she attacks.",
+		"desc_levels": [
+			"3.0x attack damage critical",
+			"4.5x attack damage critical",
+			"6.0x attack damage critical"
+		],
+		"passive": true,
+		"cooldown": [0]
 	}
 }]
