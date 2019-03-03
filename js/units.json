@@ -974,6 +974,56 @@
 		"cooldown": [13,10,7]
 	}
 },{
+	"name": "Riki",
+	"cost": 3,
+	"nickname": [],
+	"class": "assassin",
+	"race": "satyr",
+	"stats": {
+		"armor": [0],
+		"resist": [0],
+		"health": [500,1000,2000],
+		"damage": [[45,55],[90,110],[180,220]],
+		"speed": 1.1,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Smoke Screen",
+		"description": "Creates a Medium area cloud over an enemy unit, Silencing enemy units and giving them a miss chance while they are inside it.",
+		"desc_levels": [
+			"30% miss rate, 3 second duration",
+			"40% miss rate, 4 second duration",
+			"50% miss rate, 5 second duration"
+		],
+		"passive": false,
+		"cooldown": [15]
+	}
+},{
+	"name": "Mirana",
+	"cost": 3,
+	"nickname": [],
+	"class": "hunter",
+	"race": "elf",
+	"stats": {
+		"armor": [0],
+		"resist": [0],
+		"health": [600,1200,2400],
+		"damage": [[50,70],[100,120],[200,240]],
+		"speed": 1,
+		"range": "High"
+	},
+	"ability": {
+		"name": "Sacred Arrow",
+		"description": "Fires an arrow at an enemy unit on the enemy chessboard your pieces are currently attacking.  <strong>Magic</strong> damage and stun duration increase based on the distance to that board.  The attacking Mirana will fire arrows back towards your defending board.",
+		"desc_levels": [
+			"50-500 damage, 1-5 second stun",
+			"75-750 damage, 1.5-7.5 second stun",
+			"100-1000 damage, 2-10 second stun"
+		],
+		"passive": false,
+		"cooldown": [10,8,6]
+	}
+},{
 	"name": "Doom",
 	"cost": 4,
 	"nickname": [],
