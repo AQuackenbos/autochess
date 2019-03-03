@@ -1089,7 +1089,7 @@
 	},
 	"ability": {
 		"name": "Death Pulse",
-		"description": "Hits every unit (including himself) in a Medium range with a slow-moving projectile, healing allies and damaging enemies.",
+		"description": "Hits every unit (including himself) in a Medium range with a slow-moving projectile, healing allies and dealing <strong>Magic</strong> damage to enemies.",
 		"desc_levels": [
 			"100 damage, 100 heal",
 			"150 damage, 175 heal",
@@ -1164,7 +1164,7 @@
 	},
 	"ability": {
 		"name": "Static Storm",
-		"description": "Creates a Medium/High area over an enemy unit that Silences and Damages every enemy inside it.  Damage increases as the duration continues, damages 4 times per second.",
+		"description": "Creates a Medium/High area over an enemy unit that Silences and deals <strong>Magic</strong> damage to every enemy inside it.  Damage increases as the duration continues; damages 4 times per second.",
 		"desc_levels": [
 			"100 max damage per second, 2 second duration",
 			"150 max damage per second, 3 second duration",
@@ -1174,5 +1174,227 @@
 		"cooldown": [15,12,9]
 	}
 },{
-	"name": "Medusa"
+	"name": "Medusa",
+	"cost": 4,
+	"nickname": ["Dusa"],
+	"class": "hunter",
+	"race": "naga",
+	"stats": {
+		"armor": [5],
+		"resist": [10],
+		"health": [750,1500,3000],
+		"damage": [[50,60],[100,120],[200,240]],
+		"speed": 1,
+		"range": "High"
+	},
+	"ability": {
+		"name": "Stone Gaze",
+		"description": "If an enemy is looking at Medusa for 2 seconds after she activates this ability, they turn to stone, stunning them and making them take 30% additional damage from any <strong>Physical</strong> damage that hits them.",
+		"desc_levels": [
+			"Lasts 4 seconds, 2 second stone duration",
+			"Lasts 5 seconds, 3 second stone duration",
+			"Lasts 6 seconds, 4 second stone duration"
+		],
+		"passive": false,
+		"cooldown": [20]
+	}
+},{
+	"name": "Dragon Knight",
+	"cost": 4,
+	"nickname": ["DK"],
+	"class": "knight",
+	"race": ["human","dragon"],
+	"stats": {
+		"armor": [10],
+		"resist": [0],
+		"health": [800,1600,3200],
+		"damage": [[50,60],[100,120],[200,240]],
+		"speed": 1.2,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Elder Dragon Form",
+		"description": "Dragon Knight transforms into a dragon, gaining Medium range, damage, and special attack properties.  All Dragons retain the attack properties of lower level dragons.  Lasts 60 seconds.",
+		"desc_levels": [
+			"+100 damage, Green Dragon: 20 damage per second for 5 seconds after attack hits",
+			"+150 damage, Red Dragon: 75% damage splashes to Medium area",
+			"+200 damage, Blue Dragon: -30 attack speed to enemies damaged by attack for 3 seconds"
+		],
+		"passive": false,
+		"cooldown": [60]
+	}
+}, {
+	"name": "Lone Druid",
+	"cost": 4,
+	"nickname": ["LD","Bear"],
+	"class": "druid",
+	"race": "beast",
+	"stats": {
+		"armor": [0],
+		"resist": [20],
+		"health": [800,1600,3000],
+		"damage": [[50,60],[100,120],[200,240]],
+		"speed": 1.3,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Summon Spirit Bear",
+		"description": "Summons a powerful Spirit Bear nearby.",
+		"desc_levels": [
+			"bear stats",
+			"",
+			""
+		],
+		"passive": false,
+		"cooldown": [60]
+	}
+},{
+	"name": "Gyrocopter",
+	"cost": 5,
+	"nickname": ["Gyro"],
+	"class": "mech",
+	"race": "dwarf",
+	"stats": {
+		"armor": [15],
+		"resist": [0],
+		"health": [900,1800,3600],
+		"damage": [[75,80],[150,160],[300,320]],
+		"speed": 0.9,
+		"range": "High"
+	},
+	"ability": {
+		"name": "Call Down",
+		"description": "Calls down 2 missiles that hit a High area, each on a 2 second delay.  Each deals <strong>Magic</strong> damage to every enemy in the area.",
+		"desc_levels": [
+			"200 damage per missile",
+			"300 damage per missile",
+			"400 damage per missile"
+		],
+		"passive": false,
+		"cooldown": [10]
+	}
+},{
+	"name": "Lich",
+	"cost": 5,
+	"nickname": [],
+	"class": "mage",
+	"race": "undead",
+	"stats": {
+		"armor": [5],
+		"resist": [20],
+		"health": [850,1700,3400],
+		"damage": [[40,45],[80,90],[160,180]],
+		"speed": 1.5,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Chain Frost",
+		"description": "Fires a bouncing orb at an enemy that deals <strong>Magic</strong> damage and gives them -65 attack speed for 2.5 seconds.",
+		"desc_levels": [
+			"200 damage per hit, 6 bounces",
+			"300 damage per hit, 9 bounces",
+			"400 damage per hit, 13 bounces"
+		],
+		"passive": false,
+		"cooldown": [10,8,6]
+	}
+},{
+	"name": "Tidehunter",
+	"cost": 5,
+	"nickname": ["Tide"],
+	"class": "hunter",
+	"race": "naga",
+	"stats": {
+		"armor": [5],
+		"resist": [0],
+		"health": [950,1900,3800],
+		"damage": [[45,55],[90,110],[180,220]],
+		"speed": 2,
+		"range": "Melee"
+	},
+	"ability": {
+		"name": "Ravage",
+		"description": "Waves of tentacles burst from Tidehunter in a High/Very High area, dealing <strong>Magic</strong> damage and stunning enemy units hit.",
+		"desc_levels": [
+			"150 damage, 2.0 second stun",
+			"250 damage, 2.5 second stun",
+			"350 damage, 3.0 second stun"
+		],
+		"passive": false,
+		"cooldown": [30]
+	}
+},{
+	"name": "Enigma",
+	"cost": 5,
+	"nickname": [],
+	"class": "warlock",
+	"race": "elemental",
+	"stats": {
+		"armor": [5],
+		"resist": [40],
+		"health": [1000,2000,4000],
+		"damage": [[45,55],[90,110],[180,220]],
+		"speed": 1.5,
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Midnight Pulse",
+		"description": "Creates a High area of <strong>Pure</strong> damage per second that deals damage to enemies based on their maximum health.  Lasts 10 seconds.",
+		"desc_levels": [
+			"Drains 5% of maximum health per second",
+			"Drains 7% of maximum health per second",
+			"Drains 9% of maximum health per second"
+		],
+		"passive": false,
+		"cooldown": [20]
+	}
+},{
+	"name": "Techies",
+	"cost": 5,
+	"nickname": ["Fucking Techies"],
+	"class": "mech",
+	"race": "goblin",
+	"stats": {
+		"armor": [10],
+		"resist": [0],
+		"health": [1000,2000,4000],
+		"damage": [[45,55],[90,110],[180,220]],
+		"speed": 1.5,
+		"range": "High"
+	},
+	"ability": {
+		"name": "Remote Mines",
+		"description": "Plants a bomb that deals <strong>Physical</strong> damage in a High area after 3 seconds.",
+		"desc_levels": [
+			"700 damage",
+			"1100 damage",
+			"1500 damage"
+		],
+		"passive": false,
+		"cooldown": [10]
+	}
+},{
+	"name": "Death Prophet",
+	"cost": 5,
+	"nickname": ["DP"],
+	"class": "warlock",
+	"race": "undead",
+	"stats": {
+		"armor": [0],
+		"resist": [0],
+		"health": [950,1900,3800],
+		"damage": [[40,50],[80,100],[160,200]],
+		"range": "Medium"
+	},
+	"ability": {
+		"name": "Exorcism",
+		"description": "Spirits begin flying around Death Prophet in a High area, dealing 100 <strong>Physical</strong> damage to enemy units they attack at random.  At the end of the duration, Death Prophet heals for 25% of the damage dealt.  Lasts 8 seconds.",
+		"desc_levels": [
+			"Summons 10 spirits",
+			"Summons 15 spirits",
+			"Summons 20 spirits"
+		],
+		"passive": false,
+		"cooldown": [20,15,10]
+	}
 }]
