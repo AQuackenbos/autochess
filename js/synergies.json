@@ -1,6 +1,7 @@
 [{
 	"name": "human",
 	"type": "race",
+	"ability": "Silencer",
 	"description": "all Allied Humans have a chance to Silence any enemy they attack for 4 seconds.",
 	"show_n": true,
 	"combos": [{
@@ -8,14 +9,15 @@
 		"bonus": "20% Chance on hit"
 	},{
 		"units": 4,
-		"bonus": "25% Chance on hit"
-	},
+		"bonus": "45% Chance on hit"
+	},{
 		"units": 6,
-		"30% Chance on hit"
+		"bonus": "75% Chance on hit"
 	}]
 },{
 	"name": "mage",
 	"type": "class",
+	"ability": "Magic Vulnerability",
 	"description": "all Enemies lose a large amount of Magic Resistance (can become negative).",
 	"show_n": true,
 	"combos": [{
@@ -28,7 +30,9 @@
 },{
 	"name": "elf",
 	"type": "race",
+	"ability": "Evasion",
 	"description": "all Allied Elves gain bonus Evasion.",
+	"show_n": true,
 	"combos": [{
 		"units": 3,
 		"bonus": "+25% Evasion"
@@ -42,6 +46,7 @@
 },{
 	"name": "demon_hunter",
 	"type": "class",
+	"abilitY": "Shuttered Soul",
 	"description": "special changes occur to Demons on the board.",
 	"show_n": true,
 	"combos": [{
@@ -54,11 +59,14 @@
 },{
 	"name": "demon",
 	"type": "race",
+	"ability": "Fel Power",
 	"description": "This unit deals 50% bonus <strong>Pure</strong> damage to enemies.  Lose this bonus if you send out more than 1 <strong>different</strong> type of Demon.",
-	"show_n": false
+	"show_n": false,
+	"combos": []
 },{
 	"name": "assassin",
 	"type": "class",
+	"ability": "Coup de Grace",
 	"description": "all Allied Assassins gain a chance to deal Critical damage on hit.",
 	"show_n": true,
 	"combos": [{
@@ -70,5 +78,221 @@
 	},{
 		"units": 9,
 		"bonus": "20% chance to hit for 5.0x damage, as well as the previous Critical chances."
+	}]
+},{
+	"name": "orc",
+	"type": "race",
+	"ability": "Battle Hardened",
+	"description": "all Allied Orcs gain bonus HP.",
+	"show_n": true,
+	"combos": [{
+		"units": 2,
+		"bonus": "+200 Max HP"
+	},{
+		"units": 4,
+		"bonus": "+500 Max HP"
+	}]
+},{
+	"name": "warrior",
+	"type": "class",
+	"ability": "Fortified Armor",
+	"description": "all Allied Warriors gain bonus Armor.",
+	"show_n": true,
+	"combos": [{
+		"units": 3,
+		"bonus": "+7 Armor"
+	},{
+		"units": 6,
+		"bonus": "+15 Armor"
+	},{
+		"units": 9,
+		"bonus": "+24 Armor"
+	}]
+},{
+	"name": "beast",
+	"type": "race",
+	"ability": "Power of the Wild",
+	"description": "all Allied Units deal additional attack damage.",
+	"show_n": true,
+	"combos": [{
+		"units": 2,
+		"bonus": "+10% Attack Damage"
+	},{
+		"units": 4,
+		"bonus": "+25% Attack Damage"
+	},{
+		"units": 6,
+		"bonus": "+45% Attack Damage"
+	}]
+},{
+	"name": "druid",
+	"type": "class",
+	"ability": "Synergy",
+	"description": "When you have N <strong>different</strong> druid units on your board, your Druids can upgrade with less of the same number of Druid.",
+	"show_n": false,
+	"combos": [{
+		"units": 2,
+		"bonus": "2x &#9733; Druid can upgrade to a &#9733;&#9733; Druid"
+	},{
+		"units": 4,
+		"bonus": "2x &#9733;&#9733; Druid can upgrade to a &#9733;&#9733;&#9733; Druid"
+	}]
+},{
+	"name": "goblin",
+	"type": "race",
+	"ability": "Nanobots",
+	"description": "some Allied Units receive buffs.",
+	"show_n": true,
+	"combos": [{
+		"units": 3,
+		"bonus": "One random Ally gains +15 Armor and +10 Health Regen"
+	},{
+		"units": 6,
+		"bonus": "All Allied Goblins gain +15 Armor and +10 Health Regen, as well as the previous buff firing on a random Ally."
+	}]
+},{
+	"name": "mech",
+	"type": "class",
+	"ability": "Self Repair",
+	"description": "all Allied Mechs gain Health Regen.",
+	"show_n": true,
+	"combos": [{
+		"units": 2,
+		"bonus": "+15 Health Regen"
+	},{
+		"units": 4,
+		"bonus": "+40 Health Regen"
+	}]
+},{
+	"name": "undead",
+	"type": "race",
+	"ability": "Horror",
+	"description": "all Enemies lose Armor.",
+	"show_n": true,
+	"combos": [{
+		"units": 2,
+		"bonus": "-4 Enemy Armor"
+	},{
+		"units": 4,
+		"bonus": "-10 Enemy Armor"
+	}]
+},{
+	"name": "hunter",
+	"type": "class",
+	"ability": "Hunter's Pack",
+	"description": "all Allied Hunters deal additional attack damage.",
+	"show_n": true,
+	"combos": [{
+		"units": 3,
+		"bonus": "+25% Attack Damage"
+	},{
+		"units": 6,
+		"bonus": "+50% Attack Damage"
+	}]
+},{
+	"name": "warlock",
+	"type": "class",
+	"ability": "Siphon Soul",
+	"description": "all Allied Units gain Lifesteal.",
+	"show_n": true,
+	"combos": [{
+		"units": 3,
+		"bonus": "20% Lifesteal"
+	},{
+		"units": 6,
+		"bonus": "50% Lifesteal"
+	}]
+},{
+	"name": "ogre",
+	"type": "race",
+	"ability": "Two Heads",
+	"description": "Ogres gain +5% Max HP for each of their heads (+10%).",
+	"show_n": false,
+	"combos": []
+},{
+	"name": "troll",
+	"type": "race",
+	"ability": "Voodoo Frenzy",
+	"description": "some or all Allied Units will gain bonus Attack Speed.",
+	"show_n": true,
+	"combos": [{
+		"units": 2,
+		"bonus": "All Allied Trolls gain +35 Attack Speed"
+	},{
+		"units": 4,
+		"bonus": "All Allied Units gain +30 Attack Speed.  Allied Trolls also gain the previous bonus."
+	}]
+},{
+	"name": "shaman",
+	"type": "class",
+	"ability": "Hex",
+	"description": "a random Enemy unit will be transformed into a harmless frog as soon as the battle starts.",
+	"show_n": true,
+	"combos": [{
+		"units": 2,
+		"bonus": "6 second hex"
+	}]
+},{
+	"name": "naga",
+	"type": "race",
+	"ability": "Scale Armor",
+	"description": "all Allied Units gain additional Magic Resistance.",
+	"show_n": true,
+	"combos": [{
+		"units": 2,
+		"bonus": "+30% Magic Resistance"
+	},{
+		"units": 4,
+		"bonus": "+60% Magic Resistance"
+	}]
+},{
+	"name": "elemental",
+	"type": "race",
+	"ability": "Elemental Essence",
+	"description": "Enemy Melee units that attack certain Allies have a chance to turn into stone for 4 seconds.",
+	"show_n": true,
+	"combos": [{
+		"units": 2,
+		"bonus": "30% chance when attacking Allied Elementals"
+	},{
+		"units": 4,
+		"bonus": "60% chance when attacking Allied Elementals, 30% chance when attacking other Allies"
+	}]
+},{
+	"name": "dwarf",
+	"type": "race",
+	"ability": "Take Aim",
+	"description": "Dwarves have +300 Attack Range.",
+	"show_n": false,
+	"combos": []
+},{
+	"name": "satyr",
+	"type": "race",
+	"ability": "Concealment",
+	"description": "While there are any Satyrs in your waiting bench, your bench cannot be seen by other players.",
+	"show_n": false,
+	"combos": []
+},{
+	"name": "dragon",
+	"type": "race",
+	"ability": "Attunement",
+	"description": "When you send 3 <strong>different</strong> dragon units into battle, Allied Dragons start with 100 Mana.",
+	"show_n": false,
+	"combos": []
+},{
+	"name": "knight",
+	"type": "class",
+	"ability": "Divine Protection",
+	"description": "Allied Knights gain a shield for part of their time in battle.  The shield grants +75% Magic Resistance and +30 Armor for 3 seconds at a time.",
+	"show_n": true,
+	"combos": [{
+		"units": 2,
+		"bonus": "30% shielded time"
+	},{
+		"units": 4,
+		"bonus": "60% shielded time"
+	},{
+		"units": 6,
+		"bonus": "90% shielded time"
 	}]
 }]

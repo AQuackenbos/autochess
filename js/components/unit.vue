@@ -1,7 +1,7 @@
 <template>
-	<div v-bind:class="costClasses">
+	<div :class="costClasses">
 		<div class="column is-2 name">
-			<img v-bind:src="unitImageUrl"/><br />
+			<img :src="unitImageUrl" @error="hideImage"/><br />
 			<strong class="big-name">{{unit.name}}</strong>
 			<hr />
 			<span class="tag is-dark is-large">${{unit.cost}}</span><br />
@@ -9,18 +9,18 @@
 		</div>
 		<div class="column is-1 race-class">
 			<div class="columns is-centered is-vcentered is-multiline">
-				<div class="column is-12 race" v-if="unit.race.length > 2">
-					<img v-bind:src="raceImageUrl(0)"/>
+				<div class="column is-12 race" v-if="unit.race.length > 2" :data-template="'race-'+unit.race">
+					<img :src="raceImageUrl(0)"/>
 					<h3>{{labelText(unit.race)}}</h3>
 				</div>
-				<div class="column is-12 race" v-else>
-					<div v-for="(r,i) in unit.race">
-						<img v-bind:src="raceImageUrl(i)"/>
+				<div class="column is-12" v-else>
+					<div v-for="(r,i) in unit.race" class="race" :data-template="'race-'+r">
+						<img :src="raceImageUrl(i)"/>
 						<h3>{{labelText(r)}}</h3>
 					</div>
 				</div>
-				<div class="column is-12 class">
-					<img v-bind:src="classImageUrl"/>
+				<div class="column is-12 class" :data-template="'class-'+unit.class">
+					<img :src="classImageUrl"/>
 					<h3>{{labelText(unit.class)}}</h3>
 				</div>
 			</div>
@@ -44,9 +44,9 @@
 					</tr>
 					<tr>
 						<th>Damage</th>
-						<td><abbr v-bind:title="avgDamageString(0)">{{unit.stats.damage[0][0]}}-{{unit.stats.damage[0][1]}}</abbr></td>
-						<td><abbr v-bind:title="avgDamageString(1)">{{unit.stats.damage[1][0]}}-{{unit.stats.damage[1][1]}}</abbr></td>
-						<td><abbr v-bind:title="avgDamageString(2)">{{unit.stats.damage[2][0]}}-{{unit.stats.damage[2][1]}}</abbr></td>
+						<td><abbr :title="avgDamageString(0)">{{unit.stats.damage[0][0]}}-{{unit.stats.damage[0][1]}}</abbr></td>
+						<td><abbr :title="avgDamageString(1)">{{unit.stats.damage[1][0]}}-{{unit.stats.damage[1][1]}}</abbr></td>
+						<td><abbr :title="avgDamageString(2)">{{unit.stats.damage[2][0]}}-{{unit.stats.damage[2][1]}}</abbr></td>
 					</tr>
 					<tr>
 						<th><abbr title="Attacks once per this number of seconds (without bonus attack speed)">Attack Rate</abbr></th>
@@ -74,7 +74,7 @@
 					</tr>
 					<tr>
 						<th><abbr title="Melee, Medium, High, or Very High">Range</abbr></th>
-						<td colspan="3"><abbr v-bind:title="rangeDescription">{{unit.stats.range}}</abbr></td>
+						<td colspan="3"><abbr :title="rangeDescription">{{unit.stats.range}}</abbr></td>
 					</tr>
 				</tbody>
 			</table>
@@ -82,7 +82,7 @@
 		<div class="column is-5">
 			<div class="columns is-vcentered is-centered">
 				<div class="ability column is-2">
-					<img v-bind:src="abilityImageUrl" style="width:64px"/>
+					<img :src="abilityImageUrl" style="width:64px"/>
 				</div>
 				<div class="description column is-10" v-html="abilityDesc"></div>
 			</div>
@@ -115,14 +115,43 @@
 				</tbody>
 			</table>
 		</div>
+		{{ applyTippyTips() }}
 	</div>
 </template>
 
 <script>
+import tippy from 'tippy.js';
+
 export default {
 	name: 'autochess-unit',
 	props: ['unit'],
 	methods: {
+		applyTippyTips() {
+			window.setTimeout(() => {
+				tippy('.class, .race',{
+					arrow: false,
+					interactive: true,
+					placement: "right",
+					content(reference) {
+						const id = reference.getAttribute('data-template')
+						const container = document.createElement('div')
+						container.className = "card synergy";
+						const linkedTemplate = document.getElementById(id)
+						if(linkedTemplate) {
+							const node = document.importNode(linkedTemplate.childNodes[0], true)
+							container.appendChild(node)
+						} else {
+							console.log('Missing data: '+id);
+							console.log(reference);
+						}
+						return container
+					},
+				});
+			},100);
+		},
+		hideImage(event) {
+			event.target.src = this.noImageUrl;
+		},
 		labelText(str) {
 			return str.replace(/_/g,' ');
 		},
@@ -182,6 +211,9 @@ export default {
 		},
 		classImageUrl() {
 			return 'images/classes/'+ this.unit.class.toLowerCase().replace(/ /g,'_')+'.png';
+		},
+		noImageUrl() {
+			return 'images/none.png';
 		}
 	}
 }

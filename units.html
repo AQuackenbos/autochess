@@ -16,7 +16,13 @@
 			#app .autochess-unit:nth-child(odd) { background: #222 }
 			.autochess-unit strong { color: #DDD }
 		*/
-			.race-class { text-transform: capitalize }
+			.race-class, .synergy .big-name { text-transform: capitalize }
+			
+			.autochess-unit .race,
+			.autochess-unit .class {
+				cursor: pointer;
+			}
+			
 			.autochess-unit {
 				border-bottom: 1px solid white;
 			}
@@ -45,42 +51,80 @@
 				margin-left: auto;
 				margin-right: auto;
 			}
-			.table th, .table td, .column {
+			.table th, .table td, .column, .content table.table th {
 				text-align: center;
+			}
+			
+			.content table.table .desc {
+				text-align: left;
 			}
 			
 			.table td.is-vcentered {
 				vertical-align: middle;
 			}
 			
-			#app .autochess-unit hr {
-				background: #EEE;
-				margin: 2px 0;
+			hr {
+				background: #EEE !important ;
+				margin: 2px 0 !important ;
 			}
 			
 			.big-name {
 				font-size: 1.5em;
 			}
+			
+			.tippy-tooltip {
+				width: 425px !important;
+				max-width: 425px !important;
+				padding: 0;
+			}
+			
+			.synergy.card .card-content .media { align-items: center }
 		</style>
 	</head>
 	<body>
 		<div id="app" class="container">
 			<div class="notification">
 				<div class="column is-12">
+					<img src="images/logo.png" style="width:500px"/>
+					<h1 class="big-name">Units List</h1>
 					<h3>Last Updated: 2019/02/28</h3>
 					<a href="index.html">Back to Basic Rules</a>
 				</div>
 			</div>
-			<div class="columns is-multiline is-centered">
+			<div class="columns is-centered is-multiline">
 				<div class="column is-12">
-					<h1 class="is-title is-1">Auto Chess Units</h1>
+					<span>Sort by: </span>
+					&nbsp;
+					<a href="#" onclick="window.vueApp.sortBy('name')">&#9650;</a>
+					<span>Name</span>
+					<a href="#" onclick="window.vueApp.sortBy('name',true)">&#9660;</a>
+					&nbsp;
+					<a href="#" onclick="window.vueApp.sortBy('race')">&#9650;</a>
+					<span>Race</span>
+					<a href="#" onclick="window.vueApp.sortBy('race',true)">&#9660;</a>
+					&nbsp;
+					<a href="#" onclick="window.vueApp.sortBy('class')">&#9650;</a>
+					<span>Class</span>
+					<a href="#" onclick="window.vueApp.sortBy('class',true)">&#9660;</a>
+					<hr />
 				</div>
 				<div class="column is-12">
-					((controls))
+					Filter Classes<br />
+					<span v-for="synergy in synergies">
+						<img style="width:32px" class="filter active" onclick="window.vueApp.updateFilters()" :src="'images/classes/'+synergy.name+'.png'" :data-class="synergy.name" v-if="synergy.type == 'class'"/>
+					</span>
+					<hr />
+				</div>
+				<div class="column is-12">
+					Filter Races<br />
+					<span v-for="synergy in synergies">
+						<img style="width:32px" class="filter active" onclick="window.vueApp.updateFilters()" :src="'images/races/'+synergy.name+'.png'" :data-race="synergy.name" v-if="synergy.type == 'race'"/>
+					</span>
 				</div>
 			</div>
 			<section class="section">
-				<autochess-unit v-for="unit in units" v-bind:unit="unit" v-bind:key="unit.name"></auto-chess>
+				<autochess-unit v-for="unit in units" v-bind:unit="unit" v-bind:key="unit.name"></autochess-unit>
+				<autochess-synergy v-for="synergy in synergies" v-bind:synergy="synergy" v-bind:key="synergy.name"></autochess-synergy>
 			</section>
 		</div>
 		<script type="text/javascript" src="js/app.js"></script>
