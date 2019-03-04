@@ -901,7 +901,7 @@
 },{
 	"name": "Viper",
 	"cost": 3,
-	"nickname": [],
+	"nickname": ["shit-blimp", "vipper"],
 	"class": "assassin",
 	"race": "dragon",
 	"stats": {
