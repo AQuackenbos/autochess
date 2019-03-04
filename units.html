@@ -19,8 +19,20 @@
 			.race-class, .synergy .big-name { text-transform: capitalize }
 			
 			.autochess-unit .race,
-			.autochess-unit .class {
+			.autochess-unit .class, 
+			.filter {
 				cursor: pointer;
+			}
+			
+			.filter { 
+				padding: 3px;
+				filter: grayscale(100%);
+			}
+			
+			.filter.active {
+				padding: 2px;
+				border: 1px solid white;
+				filter: none;
 			}
 			
 			.autochess-unit {
@@ -91,34 +103,32 @@
 					<a href="index.html">Back to Basic Rules</a>
 				</div>
 			</div>
-			<div class="columns is-centered is-multiline">
-				<div class="column is-12">
-					<span>Sort by: </span>
-					&nbsp;
+			<div class="columns is-centered is-multiline is-vcentered">
+				<div class="column is-5">
+					Filter Classes<br />
+					<span v-for="synergy in synergies">
+						<img style="width:32px" class="filter active" onclick="window.vueApp.updateFilters(this)" :src="'images/classes/'+synergy.name+'.png'" :data-class="synergy.name" v-if="synergy.type == 'class'"/>
+					</span>
+				</div>
+				<div class="column is-2">
+					<span>Sort by</span>
+					<br />
 					<a href="#" onclick="window.vueApp.sortBy('name')">&#9650;</a>
 					<span>Name</span>
 					<a href="#" onclick="window.vueApp.sortBy('name',true)">&#9660;</a>
-					&nbsp;
+					<br />
 					<a href="#" onclick="window.vueApp.sortBy('race')">&#9650;</a>
 					<span>Race</span>
 					<a href="#" onclick="window.vueApp.sortBy('race',true)">&#9660;</a>
-					&nbsp;
+					<br />
 					<a href="#" onclick="window.vueApp.sortBy('class')">&#9650;</a>
 					<span>Class</span>
 					<a href="#" onclick="window.vueApp.sortBy('class',true)">&#9660;</a>
-					<hr />
 				</div>
-				<div class="column is-12">
-					Filter Classes<br />
-					<span v-for="synergy in synergies">
-						<img style="width:32px" class="filter active" onclick="window.vueApp.updateFilters()" :src="'images/classes/'+synergy.name+'.png'" :data-class="synergy.name" v-if="synergy.type == 'class'"/>
-					</span>
-					<hr />
-				</div>
-				<div class="column is-12">
+				<div class="column is-5">
 					Filter Races<br />
 					<span v-for="synergy in synergies">
-						<img style="width:32px" class="filter active" onclick="window.vueApp.updateFilters()" :src="'images/races/'+synergy.name+'.png'" :data-race="synergy.name" v-if="synergy.type == 'race'"/>
+						<img style="width:32px" class="filter active" onclick="window.vueApp.updateFilters(this)" :src="'images/races/'+synergy.name+'.png'" :data-race="synergy.name" v-if="synergy.type == 'race'"/>
 					</span>
 				</div>
 			</div>

@@ -41,8 +41,51 @@ window.vueApp = new Vue({
 				return 0;
 			})
 		},
-		updateFilters() {
+		updateFilters(target) {
+			if(target.classList.contains('active'))
+				target.classList.remove('active');
+			else
+				target.classList.add('active');
 			
+			//Build lists
+			let selectedRaces = [];
+			let selectedClasses = [];
+			
+			let activeFilters = document.querySelectorAll('.filter.active');
+			
+			activeFilters.forEach((f) => {
+				let t;
+				if(t = f.getAttribute('data-class')) {
+					selectedClasses.push(t);
+				} else {
+					t = f.getAttribute('data-race');
+					selectedRaces.push(t);
+				}
+			});
+			
+			//Filter
+			let filteredUnits = this.allUnits.slice(0);
+			
+			//Race
+			filteredUnits = filteredUnits.filter((u) => {
+				if(u.race.length > 2) {
+					return (selectedRaces.includes(u.race));
+				} else {
+					let either = false;
+					u.race.forEach((r) => {
+						if(selectedRaces.includes(r))
+							either = true;
+					});
+					return either;
+				}
+			});
+			
+			//Class
+			filteredUnits = filteredUnits.filter((u) => {
+				return (selectedClasses.includes(u.class));
+			});
+			
+			this.units = filteredUnits;
 		}
 	}
 });
