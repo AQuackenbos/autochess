@@ -1,0 +1,74 @@
+[{
+	"name": "human",
+	"type": "race",
+	"description": "all Allied Humans have a chance to Silence any enemy they attack for 4 seconds.",
+	"show_n": true,
+	"combos": [{
+		"units": 2,
+		"bonus": "20% Chance on hit"
+	},{
+		"units": 4,
+		"bonus": "25% Chance on hit"
+	},
+		"units": 6,
+		"30% Chance on hit"
+	}]
+},{
+	"name": "mage",
+	"type": "class",
+	"description": "all Enemies lose a large amount of Magic Resistance (can become negative).",
+	"show_n": true,
+	"combos": [{
+		"units": 3,
+		"bonus": "-40% Enemy Magic Resistance"
+	},{
+		"units": 6,
+		"bonus": "-80% Enemy Magic Resistance"
+	}]
+},{
+	"name": "elf",
+	"type": "race",
+	"description": "all Allied Elves gain bonus Evasion.",
+	"combos": [{
+		"units": 3,
+		"bonus": "+25% Evasion"
+	},{
+		"units": 6, 
+		"bonus": "+50% Evasion"
+	},{
+		"units": 9,
+		"bonus": "+75% Evasion"
+	}]
+},{
+	"name": "demon_hunter",
+	"type": "class",
+	"description": "special changes occur to Demons on the board.",
+	"show_n": true,
+	"combos": [{
+		"units": 1,
+		"bonus": "Enemy Demons lose their damage bonus"
+	},{
+		"units": 2,
+		"bonus": "Your Demons retain their damage bonus even if they normally would not"
+	}]
+},{
+	"name": "demon",
+	"type": "race",
+	"description": "This unit deals 50% bonus <strong>Pure</strong> damage to enemies.  Lose this bonus if you send out more than 1 <strong>different</strong> type of Demon.",
+	"show_n": false
+},{
+	"name": "assassin",
+	"type": "class",
+	"description": "all Allied Assassins gain a chance to deal Critical damage on hit.",
+	"show_n": true,
+	"combos": [{
+		"units": 3,
+		"bonus": "10% chance to hit for 3.0x damage"
+	},{
+		"units": 6,
+		"bonus": "15% chance to hit for 4.0x damage, as well as the previous Critical chance"
+	},{
+		"units": 9,
+		"bonus": "20% chance to hit for 5.0x damage, as well as the previous Critical chances."
+	}]
+}]

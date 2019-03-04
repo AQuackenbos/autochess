@@ -4,8 +4,26 @@
 			<img v-bind:src="unitImageUrl"/><br />
 			<strong class="big-name">{{unit.name}}</strong>
 			<hr />
-			<strong>${{unit.cost}}</strong><br />
+			<span class="tag is-dark is-large">${{unit.cost}}</span><br />
 			<span v-if="unit.nickname.length > 0">"{{unit.nickname.join('", "')}}"</span>
+		</div>
+		<div class="column is-1 race-class">
+			<div class="columns is-centered is-vcentered is-multiline">
+				<div class="column is-12 race" v-if="unit.race.length > 2">
+					<img v-bind:src="raceImageUrl(0)"/>
+					<h3>{{labelText(unit.race)}}</h3>
+				</div>
+				<div class="column is-12 race" v-else>
+					<div v-for="(r,i) in unit.race">
+						<img v-bind:src="raceImageUrl(i)"/>
+						<h3>{{labelText(r)}}</h3>
+					</div>
+				</div>
+				<div class="column is-12 class">
+					<img v-bind:src="classImageUrl"/>
+					<h3>{{labelText(unit.class)}}</h3>
+				</div>
+			</div>
 		</div>
 		<div class="column is-4">
 			<table class="table is-bordered table is-striped">
@@ -26,9 +44,9 @@
 					</tr>
 					<tr>
 						<th>Damage</th>
-						<td><abbr v-bind:title="avgDamage(0)">{{unit.stats.damage[0][0]}}-{{unit.stats.damage[0][1]}}</abbr></td>
-						<td><abbr v-bind:title="avgDamage(1)">{{unit.stats.damage[1][0]}}-{{unit.stats.damage[1][1]}}</abbr></td>
-						<td><abbr v-bind:title="avgDamage(2)">{{unit.stats.damage[2][0]}}-{{unit.stats.damage[2][1]}}</abbr></td>
+						<td><abbr v-bind:title="avgDamageString(0)">{{unit.stats.damage[0][0]}}-{{unit.stats.damage[0][1]}}</abbr></td>
+						<td><abbr v-bind:title="avgDamageString(1)">{{unit.stats.damage[1][0]}}-{{unit.stats.damage[1][1]}}</abbr></td>
+						<td><abbr v-bind:title="avgDamageString(2)">{{unit.stats.damage[2][0]}}-{{unit.stats.damage[2][1]}}</abbr></td>
 					</tr>
 					<tr>
 						<th><abbr title="Attacks once per this number of seconds (without bonus attack speed)">Attack Rate</abbr></th>
@@ -60,24 +78,6 @@
 					</tr>
 				</tbody>
 			</table>
-		</div>
-		<div class="column is-1 race-class">
-			<div class="columns is-centered is-vcentered is-multiline">
-				<div class="column is-12 race" v-if="unit.race.length > 2">
-					<img v-bind:src="raceImageUrl(0)"/>
-					<h3>{{labelText(unit.race)}}</h3>
-				</div>
-				<div class="column is-12 race" v-else>
-					<div v-for="(r,i) in unit.race">
-						<img v-bind:src="raceImageUrl(i)"/>
-						<h3>{{labelText(r)}}</h3>
-					</div>
-				</div>
-				<div class="column is-12 class">
-					<img v-bind:src="classImageUrl"/>
-					<h3>{{labelText(unit.class)}}</h3>
-				</div>
-			</div>
 		</div>
 		<div class="column is-5">
 			<div class="columns is-vcentered is-centered">
@@ -130,9 +130,22 @@ export default {
 			let min = this.unit.stats.damage[lvl][0];
 			let max = this.unit.stats.damage[lvl][1];
 			let avg = Math.round((min + max)/2);
-			let dps = avg / this.unit.stats.speed;
+			
+			return avg;
+			
+		},
+		dps(lvl) {
+			let avg = this.avgDamage(lvl);
+			let dps = Math.round(avg / this.unit.stats.speed);
+			
+			return dps;
+		},
+		avgDamageString(lvl) {
+			let avg = this.avgDamage(lvl);
+			let dps = this.dps(lvl);
 			
 			return "Average: "+avg+' / Average Base DPS: '+dps;
+		
 		},
 		raceImageUrl(idx) {
 			if(this.unit.race.length > 2)

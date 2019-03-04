@@ -614,11 +614,11 @@
 	},
 	"ability": {
 		"name": "Nature's Call",
-		"description": "Summons an ally Treant to an edge of the board.",
+		"description": "Summons an ally Treant to an edge of the board.  Treants have 5 Armor, 0% Magic Resist, and 1.5 Attack Rate.",
 		"desc_levels": [
-			"(treant stats)",
-			"..",
-			".."
+			"300 Treant HP, 30-50 Treant Damage",
+			"500 Treant HP, 50-70 Treant Damage",
+			"700 Treant HP, 70-90 Treant Damage"
 		],
 		"passive": false,
 		"cooldown": [7]
@@ -639,14 +639,14 @@
 	},
 	"ability": {
 		"name": "Pounce",
-		"description": "[!!] Recently updated.  Need more info.",
+		"description": "Leaps towards an enemy, dealing <strong>Physical</strong> damage, disarming them, and landing on the opposite side.",
 		"desc_levels": [
-			"",
-			"",
-			""
+			"200 damage, 3 second disarm",
+			"300 damage, 5 second disarm",
+			"400 damage, 7 second disarm"
 		],
 		"passive": false,
-		"cooldown": [0]
+		"cooldown": [10,8,6]
 	}
 },{
 	"name": "Lycan",
@@ -664,11 +664,11 @@
 	},
 	"ability": {
 		"name": "Transform",
-		"description": "Transforms, gaining Max HP, and summons 2 wolves in close squares.",
+		"description": "Transforms, gaining Max HP, and summons 2 wolves in close squares.  Wolves have 5 Armor, 0% Magic Resistance, and 1.2 Attack Rate.",
 		"desc_levels": [
-			"+20% max hp, (wolf stats)",
-			"+30% max hp",
-			"+40% max hp"
+			"+20% max hp, 300 Wolf HP, 50-100 Wolf Damage",
+			"+30% max hp, 500 Wolf HP, 100-150 Wolf Damage",
+			"+40% max hp, 700 Wolf HP, 150-200 Wolf Damage"
 		],
 		"passive": false,
 		"cooldown": [60]
@@ -689,11 +689,11 @@
 	},
 	"ability": {
 		"name": "Plague Ward",
-		"description": "Summons a plague ward with High attack range that cannot move.  The ward's attacks slow the enemy Attack Rate by 0.3.",
+		"description": "Summons a plague ward with High attack range that cannot move.  Plague Ward has 0 armor, 100% Magic Resistance, and (X) Attack Rate.  The ward's attacks slow the enemy Attack Rate by 0.3.",
 		"desc_levels": [
-			"ward stats.",
-			"",
-			""
+			"200 Ward HP, 50-100 Ward Damage",
+			"300 Ward HP, 100-150 Ward Damage",
+			"400 Ward HP, 150-200 Ward Damage"
 		],
 		"passive": false,
 		"cooldown": [5]
@@ -1289,11 +1289,11 @@
 	},
 	"ability": {
 		"name": "Summon Spirit Bear",
-		"description": "Summons a powerful Spirit Bear nearby.",
+		"description": "Summons a powerful Spirit Bear nearby.  Spirit Bear has 10 Armor, 10% Magic Resistance, and 1.4 Attack Rate.  The bear has an (X)% Chance to Root the enemy it attacks.",
 		"desc_levels": [
-			"bear stats",
-			"",
-			""
+			"1200 Bear HP, 150-200 Bear Damage",
+			"1600 Bear HP, 250-300 Bear Damage",
+			"2000 Bear HP, 350-400 Bear Damage"
 		],
 		"passive": false,
 		"cooldown": [60]
