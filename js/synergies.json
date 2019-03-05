@@ -179,7 +179,7 @@
 },{
 	"name": "hunter",
 	"type": "class",
-	"ability": "Hunter's Pack",
+	"ability": "Deadly Shot",
 	"description": "all Allied Hunters deal additional attack damage.",
 	"show_n": true,
 	"combos": [{
