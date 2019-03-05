@@ -199,7 +199,7 @@
 		"cooldown": [10]
 	}
 },{
-	"name": "Bat Rider",
+	"name": "Batrider",
 	"cost": 1,
 	"nickname": ["Bat"],
 	"class": "knight",
