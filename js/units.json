@@ -1239,7 +1239,7 @@
 	},
 	"ability": {
 		"name": "Stone Gaze",
-		"description": "If an enemy is looking at Medusa for 2 seconds after she activates this ability, they turn to stone, stunning them and making them take 30% additional damage from any <strong>Physical</strong> damage that hits them.",
+		"description": "If an enemy is looking at Medusa for 2 seconds after she activates this ability, they turn to stone, stunning them and making them take 20% additional damage from any <strong>Physical</strong> damage that hits them.",
 		"desc_levels": [
 			"Lasts 4 seconds, 2 second stone duration",
 			"Lasts 5 seconds, 3 second stone duration",
@@ -1267,7 +1267,7 @@
 		"description": "Dragon Knight transforms into a dragon, gaining Medium range, damage, and special attack properties.  All Dragons retain the attack properties of lower level dragons.  Lasts 60 seconds.",
 		"desc_levels": [
 			"+100 damage, Green Dragon: 20 damage per second for 5 seconds after attack hits",
-			"+150 damage, Red Dragon: 75% damage splashes to Medium area",
+			"+150 damage, Red Dragon: 50% damage splashes to Medium area",
 			"+200 damage, Blue Dragon: -30 attack speed to enemies damaged by attack for 3 seconds"
 		],
 		"passive": false,
