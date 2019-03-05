@@ -141,14 +141,14 @@
 	"name": "goblin",
 	"type": "race",
 	"ability": "Nanobots",
-	"description": "some Allied Units receive buffs.",
+	"description": "some or all Allied Units receive buffs.",
 	"show_n": true,
 	"combos": [{
 		"units": 3,
 		"bonus": "One random Ally gains +15 Armor and +10 Health Regen"
 	},{
 		"units": 6,
-		"bonus": "All Allied Goblins gain +15 Armor and +10 Health Regen, as well as the previous buff firing on a random Ally."
+		"bonus": "All Allies gain +15 Armor and +10 Health Regen, as well as the previous buff firing on a random Ally."
 	}]
 },{
 	"name": "mech",
