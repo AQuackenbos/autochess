@@ -639,14 +639,14 @@
 	},
 	"ability": {
 		"name": "Pounce",
-		"description": "Leaps towards an enemy, dealing <strong>Physical</strong> damage, disarming them, and landing on the opposite side.",
+		"description": "Leaps towards an enemy, dealing <strong>Physical</strong> damage, disarming them for 5 seconds, and landing on the opposite side.",
 		"desc_levels": [
-			"200 damage, 3 second disarm",
-			"300 damage, 5 second disarm",
-			"400 damage, 7 second disarm"
+			"200 damage",
+			"300 damage",
+			"400 damage"
 		],
 		"passive": false,
-		"cooldown": [10,8,6]
+		"cooldown": [8,6,4]
 	}
 },{
 	"name": "Lycan",
