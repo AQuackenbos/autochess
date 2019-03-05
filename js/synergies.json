@@ -35,10 +35,10 @@
 	"show_n": true,
 	"combos": [{
 		"units": 3,
-		"bonus": "+25% Evasion"
+		"bonus": "+20% Evasion"
 	},{
 		"units": 6, 
-		"bonus": "+50% Evasion"
+		"bonus": "+45% Evasion"
 	},{
 		"units": 9,
 		"bonus": "+75% Evasion"
@@ -187,7 +187,7 @@
 		"bonus": "+25% Attack Damage"
 	},{
 		"units": 6,
-		"bonus": "+50% Attack Damage"
+		"bonus": "+55% Attack Damage"
 	}]
 },{
 	"name": "warlock",
