@@ -689,7 +689,7 @@
 	},
 	"ability": {
 		"name": "Plague Ward",
-		"description": "Summons a plague ward with High attack range that cannot move.  Plague Ward has 0 armor, 100% Magic Resistance, and (X) Attack Rate.  The ward's attacks slow the enemy Attack Rate by 0.3.",
+		"description": "Summons a plague ward with High attack range that cannot move.  Plague Ward has 0 armor, 100% Magic Resistance, and 1.4 Attack Rate.  The ward's attacks slow the enemy Attack Rate by 0.3.",
 		"desc_levels": [
 			"200 Ward HP, 50-100 Ward Damage",
 			"300 Ward HP, 100-150 Ward Damage",
