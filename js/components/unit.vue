@@ -81,10 +81,10 @@
 		</div>
 		<div class="column is-5">
 			<div class="columns is-vcentered is-centered">
-				<div class="ability column is-2">
-					<img :src="abilityImageUrl" style="width:64px"/>
+				<div class="ability column is-3">
+					<img :src="abilityImageUrl"/>
 				</div>
-				<div class="description column is-10" v-html="abilityDesc"></div>
+				<div class="description column is-9" v-html="abilityDesc"></div>
 			</div>
 			<table class="table is-bordered table is-striped is-vcentered">
 				<thead>

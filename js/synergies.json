@@ -180,14 +180,14 @@
 	"name": "hunter",
 	"type": "class",
 	"ability": "Deadly Shot",
-	"description": "all Allied Hunters deal additional attack damage.",
+	"description": "all Allied Hunters deal additional attack damage, and have a chance to ignore evasion.",
 	"show_n": true,
 	"combos": [{
 		"units": 3,
-		"bonus": "+25% Attack Damage"
+		"bonus": "+30 Attack Damage, 30% Chance to Ignore Evasion"
 	},{
 		"units": 6,
-		"bonus": "+55% Attack Damage"
+		"bonus": "+70 Attack Damage, 70% Chance to Ignore Evasion"
 	}]
 },{
 	"name": "warlock",
